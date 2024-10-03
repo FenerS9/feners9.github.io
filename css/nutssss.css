@@ -39,7 +39,7 @@ body {
 .headPhoto {
     width: 8rem;
     height: 8rem;
-    background: url(https://qlogo.store.qq.com/qzone/1065613791/1065613791/100) no-repeat;
+    background: url(../img/head.gif) no-repeat;
     background-size: cover;
     border-radius: 50%;
     position: relative;
