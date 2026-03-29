@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>获取最新链接</title>
+<style>
+/* 基本样式设置 */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #fff;
+color: #333;
+}
+
+.back-home-btn {
+background-color: #3498db; /* 蓝色 */
+color: white;
+padding: 12px 20px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+border-radius: 2px;
+margin: 20px;
+display: block;
+text-align: center;
+text-decoration: none;
+transition: background-color 0.3s;
+}
+.back-home-btn:hover {
+background-color: #2980b9; /* 深蓝色 */
+}
+
+/* 容器宽度设置 */
+.container {
+width: 100%;
+max-width: 100%;  /* 100% 宽度 */
+box-sizing: border-box;
+margin: 0 auto;
+padding: 20px;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 2px; /* 圆角 */
+overflow: hidden; /* 确保不出现滚动条 */
+}
+
+/* 手风琴样式 */
+.accordion {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+.accordion-item {
+border-top: 2px solid #3498db; /* 蓝色描边框 */
+border-radius: 5px; /* 椭圆形边框 */
+margin-bottom: 5px; /* 降低每个项目的间隙 */
+}
+
+.accordion-item:first-child {
+border-top: none;
+}
+
+.accordion-header {
+background-color: #fff; /* 白色背景 */
+color: #3498db; /* 蓝色字体 */
+padding: 12px 16px; /* 减少内边距 */
+cursor: pointer;
+font-size: 18px;
+text-align: left;
+width: 100%;
+outline: none;
+border: 2px solid #3498db; /* 蓝色边框 */
+border-radius: 5px; /* 椭圆形边框 */
+transition: background-color 0.3s ease;
+}
+.accordion-header:hover {
+background-color: #ecf0f1; /* 浅灰色背景 */
+}
+
+.accordion-content {
+background-color: #f9f9f9; /* 浅灰色背景 */
+padding: 12px 16px; /* 减少内容内边距 */
+display: none;
+font-size: 14px;
+border-top: 1px solid #ddd;
+border-radius: 5px; /* 椭圆形边框 */
+margin-top: 5px; /* 减小内容区域与标题之间的间隙 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+.accordion-header {
+font-size: 16px;  /* 小屏幕调整字体大小 */
+}
+
+.accordion-content {
+font-size: 13px;  /* 小屏幕调整内容字体大小 */
+}
+
+.container {
+padding: 10px;  /* 小屏幕减少内边距 */
+}
+
+.back-home-btn {
+font-size: 14px; /* 小屏幕时按钮字体变小 */
+padding: 10px 15px;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- 返回按钮 -->
+<a href="./" class="back-home-btn">返回应用中心</a>
+<div class="container">
+<ul class="accordion">
+
+
+<li class="accordion-item">
+<button class="accordion-header">如何获取最新可用地址</button>
+<div class="accordion-content">
+<span style="font-size: 14px; color: #ff0000;"><strong>Sexmcc论坛最新地址</strong></span>
+<p>海外永久可用地址：<a href="https://sexmcc.com/" target="_blank">sexmcc.com</a></p>
+<p>TG社区：<a href="https://t.me/sexmccccom/" target="_blank">t.me/sexmccccom</a></p></p>
+<p>最新地址发布页1：<a href="https://sexmcc13.com/" target="_blank">sexmcc13.com</a></p>
+<p>最新地址发布页2：<a href="https://sexmcc14.com/" target="_blank">sexmcc14.com</a></p>
+<p>最新地址发布页3：<a href="https://sexmcc15.com/" target="_blank">sexmcc15.com</a></p>
+
+<span style="font-size: 14px; color: #ff0000;"><strong>草榴社区最新地址</strong></span>
+<p>海外永久可用地址：<a href="http://caoliu1024.com/" target="_blank">caoliu1024.com</a></p>
+<p>海外地址2：<a href="http://1024caoliu.com/" target="_blank">1024caoliu.com</a></p>
+<p>海外地址3：<a href="http://caoliu.sex/" target="_blank">caoliu.sex</a></p></p>
+<p>或者发任意内容邮件到：caoliu950@gmail.com</p>
+</div>
+</li>
+
+
+<li class="accordion-item">
+<button class="accordion-header">还是找不到 想找其他地址 联系客服</button>
+<div class="accordion-content">
+<span style="font-size: 14px; color: #ff0000;"><strong>扫一扫添加客服微信</strong></span>
+<p>
+<img src="../wx2wm.jpg" style="border-radius: 10px;">
+</div>
+</li>
+
+
+</ul>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+accordionHeaders.forEach(header => {
+header.addEventListener("click", function() {
+const content = header.nextElementSibling;
+const isVisible = content.style.display === "block";
+                    
+// 关闭所有内容
+document.querySelectorAll(".accordion-content").forEach(c => c.style.display = "none");
+
+// 如果当前点击的内容未展开，则展开
+if (!isVisible) {
+content.style.display = "block";
+}
+});
+});
+});
+</script>
+
+</body>
+</html>

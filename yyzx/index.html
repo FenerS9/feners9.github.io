@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>应用中心</title>
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./css/icons.min.css" rel="stylesheet" type="text/css">
+<link href="./css/app-creative.min.css" rel="stylesheet" type="text/css" id="light-style">
+<link href="./css/hyper.css?v=045256" rel="stylesheet" type="text/css">
+</head>
+<body data-layout="topnav">
+<div class="wrapper">
+<div class="content-page">
+<div class="content">
+<div class="header-navbar">
+<div class="container header-flex">
+<a href="#" class="topnav-logo" style="float: none;">
+<img src="./img/logo.png" height="36">
+<div class="logo-title"></div>
+</a>
+<button class="navbar-toggle" id="navbarToggle">
+<i class="noti-icon uil-ellipsis-h"></i>
+<span class="toggle-text"></span>
+</button>
+<div class="nav-buttons" id="navButtons">
+<a class="btn btn-outline-primary" href="../">
+<i class="noti-icon uil-redo"></i>
+返回主页
+</a>
+
+<a class="btn btn-outline-primary" href="./url.html">
+<i class="noti-icon uil-book-open"></i>
+获取最新链接
+</a>
+</div>
+</div>
+</div>
+
+<style>
+    .header-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+    }
+    .nav-buttons {
+        display: flex;
+        gap: 10px;
+    }
+    .navbar-toggle {
+        display: none;
+        align-items: center;
+        gap: 6px;
+        background: transparent;
+        border: 1px solid #007bff;
+        color: #007bff;
+        border-radius: 6px;
+        padding: 6px 12px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .navbar-toggle i {
+        font-size: 16px;
+    }
+    @media (max-width: 768px) {
+        .navbar-toggle {
+            display: flex;
+        }
+        .nav-buttons {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 1000;
+            min-width: 200px;
+        }
+        .nav-buttons.active {
+            display: flex;
+        }
+        .nav-buttons .btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>
+
+<script>
+    document.getElementById('navbarToggle').addEventListener('click', function() {
+        const navButtons = document.getElementById('navButtons');
+        navButtons.classList.toggle('active');
+    });
+    document.addEventListener('click', function(event) {
+        const navbarToggle = document.getElementById('navbarToggle');
+        const navButtons = document.getElementById('navButtons');
+        if (!navbarToggle.contains(event.target) && !navButtons.contains(event.target)) {
+            navButtons.classList.remove('active');
+        }
+    });
+</script>
+<div class="container">
+<div class="row">
+<div class="col-12">
+<div class="page-title-box">
+<div class="page-title-right">
+<div class="app-search">
+<div class="position-relative">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="tab-content">
+<!-- 内容面板 -->
+<div class="tab-pane active" id="group-all">
+<div class="hyper-wrapper">
+
+<!-- 内容分割线 -->
+
+<a href="https://h9dv4m.top/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/madou.jpg" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">麻豆TV</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">麻豆TV</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">在线观看</span>
+</div>
+</div>
+</a>
+
+
+<a href="https://fc58kr6.xyz/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/sexmcc.png" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">Sexmcc论坛</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">Sexmcc</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">反差论坛</span>
+</div>
+</div>
+</a>
+
+
+<a href="https://fxme6wn.xyz/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/yueme.png" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">约么</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">约么</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">约会平台</span>
+</div>
+</div>
+</a>
+
+
+<a href="https://www.bvxz49.xyz/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/bilibili.jpg" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">B站</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">Blibili</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">原创博主</span>
+</div>
+</div>
+</a>
+
+
+<a href="https://79ertbm.xyz/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/mmtt.png" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">猫咪头条</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">猫咪头条</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">热门事件</span>
+</div>
+</div>
+</a>
+
+
+<a href="https://jzd.59f6j4.live:5688/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/jzzb.png" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">橘子直播</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">橘子直播</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">免费观看</span>
+</div>
+</div>
+</a>
+
+
+<a href="https://at53ssm.xyz/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/mmdz.png" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">猫咪段子</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">猫咪段子</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">成人社区</span>
+</div>
+</div>
+</a>
+
+
+<a href="https://b160325s.2udc.boobimgshop.shop/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/xhs.png" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">小黄书</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">小黄书</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">成人社区</span>
+</div>
+</div>
+</a>
+
+
+<a href="https://3oxcev36xgotw.xyz/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/pzhan.png" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">P站</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">P站</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">在线观看</span>
+</div>
+</div>
+</a>
+
+
+<a href="https://g5d85n.com/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/gdian.png" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">G点视频</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">G点</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">在线观看</span>
+</div>
+</div>
+</a>
+
+
+<a href="https://cl260302b7a.top/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/caoliu.png" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">草榴社区</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">草榴</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">海量原创</span>
+</div>
+</div>
+</a>
+
+
+<a href="https://dfnrbc3.xyz/" class="home-card category">
+<img class="home-img" src="./img/loading.gif" data-src="./img/xbmm.png" style="border-radius: 10px;">
+<div class="flex" style="flex-direction: column; gap: 6px; padding: 4px 0;">
+<p class="name" style="margin: 0;">新版猫咪社区</p>
+<div class="goods-tags" style="display: flex; justify-content: center; gap: 8px; margin: 0;">
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">新版猫咪</span>
+<span class="badge badge-outline-primary" style="font-size: 12px; padding: 2px 8px;">成人社区</span>
+</div>
+</div>
+</a>
+<!-- 内容分割线 -->
+
+</div>
+</div>
+</div>
+</div><!-- content -->
+<!-- Footer Start -->
+<footer class="hyper-footer">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="footer-links">
+清锋网络 &copy; 2026
+</div>
+</div>
+<div class="col-md-6">
+<div class="text-md-right footer-links d-none d-md-block">
+</div>
+</div>
+</div>
+</div>
+<div class="back-to-top">
+<button class=" btn btn-primary" id="back-to-top">
+<i class="dripicons-chevron-up"></i>
+</button>
+</div>
+</footer>
+<!-- end Footer -->
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script src="./js/hyper.js?v=215115"></script>
+</body>
+</html>
