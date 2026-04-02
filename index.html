@@ -1,427 +1,229 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-<title>清锋网络</title>
+<title>业务接单</title>
 <link href="./img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<link rel="stylesheet" href="./css/index.css?v=3.3.0" class="cdn-support">
+<link rel="stylesheet" href="./css/bootstrap.min.css?v=3.3.0" class="cdn-support">
+<link rel="stylesheet" href="./css/_.css?v=3.3.0" class="cdn-support">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<style>
-:root {
---bg-color: #2b2b2b;
---text-color: #ffffff;
---primary-color: #00c3ff;
---card-bg: rgba(255, 255, 255, 0.1);
---avatar-border-color: #aaa;
-/* 灰白色边框颜色 */
---wechat-green: #21d247;
-/* 微信绿 */
---qq-blue: #0099ff; /* 新增QQ蓝色 */
---dark-border-color: rgba(255, 255, 255, 0.3);
---light-border-color: rgba(0, 0, 0, 0.3);
-}
-
-/* 新增亮色主题变量 */
-:root.light-mode {
---bg-color: #f5f5f5;
---text-color: #333333;
---primary-color: #007bff;
---card-bg: rgba(0, 0, 0, 0.05);
-}
-
-.light-mode .nav-btn {
-border-color: var(--light-border-color);
-box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-}
-
-.nav-btn {
-border: 1px solid var(--dark-border-color);
-box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
-transition: all 0.3s;
-}
-
-.nav-btn:hover {
-border-color: var(--primary-color);
-box-shadow: 0 0 12px var(--primary-color);
-}
-
-/* 头像容器定位 */
-.avatar-wrapper {
-position: relative;
-margin-bottom: 1.5rem;
-width: min(100%, 32rem);
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-touch-action: manipulation;
-}
-
-body {
-background: var(--bg-color);
-color: var(--text-color);
-font-family: system-ui, -apple-system, sans-serif;
-min-height: 100vh;
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 2rem 1rem;
-position: relative;
-}
-
-.avatar {
-width: 8rem;
-height: 8rem;
-border-radius: 50%;
-border: 3px solid var(--avatar-border-color);
-/* 修改头像边框颜色 */
-margin-bottom: 1.5rem;
-object-fit: cover;
-}
-
-.contact-container {
-display: flex;
-flex-direction: column;
-gap: 0.8rem;
-align-items: center;
-margin-bottom: 2rem;
-}
-
-.contact-item {
-display: flex;
-gap: 0.8rem;
-align-items: center;
-}
-
-.copy-btn {
-color: white;
-padding: 0.4rem 1rem;
-border-radius: 1rem;
-cursor: pointer;
-transition: opacity 0.3s;
-border: none;
-}
-
-.wechat-copy-btn {
-background: var(--wechat-green); /* 复制按钮底色换成微信绿 */
-}
-
-.qq-copy-btn {
-background: var(--qq-blue); /* QQ复制按钮用QQ蓝 */
-}
-
-
-.copy-btn:hover {
-opacity: 0.9;
-}
-
-.nav-container {
-display: flex;
-flex-direction: column;
-gap: 1rem;
-width: min(60%, 24rem);
-/* 导航按钮宽度为五分之三 */
-}
-
-.nav-btn {
-background: rgba(255, 255, 255, 0.1);
-backdrop-filter: blur(4px);
-color: var(--text-color);
-/* 减小内边距 */
-padding: 0.7rem;
-border-radius: 2rem;
-/* 导航按钮两边变圆 */
-cursor: pointer;
-width: 100%;
-/* 减小字体大小 */
-font-size: 0.9rem;
-}
-
-.nav-btn:active {
-transform: scale(0.98);
-}
-
-.toast {
-position: fixed;
-bottom: 2rem;
-left: 50%;
-transform: translateX(-50%);
-background: rgba(0, 0, 0, 0.8);
-color: white;
-padding: 0.8rem 1.5rem;
-border-radius: 2rem;
-opacity: 0;
-transition: opacity 0.3s;
-pointer-events: none;
-}
-
-.toast.show {
-opacity: 1;
-}
-
-.record-link {
-margin-top: 2rem;
-font-size: 0.9rem;
-}
-
-.record-link a {
-color: var(--text-color);
-}
-
-@media (max-width: 480px) {
-body {
-padding: 1.5rem 1rem;
-}
-
-.avatar {
-width: 6rem;
-height: 6rem;
-}
-}
-
-/* 月亮图标 */
-.moon-icon {
-width: 18px;
-height: 18px;
-fill: var(--text-color);
-}
-
-/* 太阳图标 */
-.light-mode .moon-icon {
-display: none;
-}
-
-.sun-icon {
-display: none;
-width: 18px;
-height: 18px;
-fill: var(--text-color);
-}
-
-.light-mode .sun-icon {
-display: block;
-}
-
-/* 微信客服按钮样式 */
-.wechat-support-btn {
-position: fixed;
-right: 20px;
-bottom: 35%;
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background-color: var(--wechat-green);
-color: white;
-font-size: 18px;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-transition: transform 0.3s;
-}
-
-.wechat-support-btn:hover {
-transform: scale(1.1);
-}
-
-/* 日夜切换按钮样式 */
-.theme-toggle {
-position: fixed;
-right: 20px;
-bottom: calc(38% - 90px); /* 调整日夜切换按钮的位置，再往下移动一点 */
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background: var(--card-bg);
-backdrop-filter: blur(4px);
-border: none;
-cursor: pointer;
-transition: transform 0.3s;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.theme-toggle:hover {
-transform: scale(1.1);
-}
-
-/* 微信客服二维码弹窗样式 */
-.wechat-qrcode-modal {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.7);
-justify-content: center;
-align-items: center;
- }
-
-.wechat-qrcode-modal.show {
-display: flex;
-}
-
-.wechat-qrcode {
-width: 200px;
-height: 200px;
-background-color: white;
-border-radius: 8px;
-padding: 10px;
-}
-</style>
+<link rel="stylesheet" href="./css/tanchuang.css?v=3.3.0" class="cdn-support"><!-- 弹窗代码写入css -->
+<script src="./js/tanchuang.js"></script><!-- 弹窗代码写入js -->
+<script src="./js/cs.js"></script><!-- 测试修补下划线漏洞 -->
 </head>
 
-<body>
-<div class="avatar-wrapper">
-<img src="./img/head.jpg" class="avatar">
+<body style="background-size: cover;background-image: linear-gradient(180deg, rgb(255 255 255 / 0%), rgb(255 255 255 / 71%)), url('./img/bg.jpg')">
+<nav class="navbar navbar-expand-lg navbar-acg">
+<div class="container">
+<a class="navbar-brand fw-bold d-flex align-items-center">
+<img src="./img/favicon.ico" class="brand-logo me-2">
+<span style="color: #1396558a;">清锋网络 · 业务接单</span>
+</a>
+</div>
+</nav>
+
+<div id="pjax-container"><main class="container py-4">
+<!-- 公告面板 -->
+<div class="panel">
+<div class="panel-header">
+<img src="./img/gonggao.png" class="brand-logo me-2">
+<h6 class="panel-title">公告</h6>
+</div>
+<div class="panel-body">
+<font color="#a55eea">本页面所有业务均在接单范围内</font></p>
+<font color="#a55eea">点击对应业务可查看详细内容</font></p>
+<font color="#ff4757">如有意向下单 请直接联系客服沟通</font></p>
+<br/>
+
+<a data-id="1" class="switch-category chip is-primary" href="../">
+<span class="chip-icon" style="background: url('./img/favicon.ico') center/cover no-repeat;"></span>清锋网络</a>
+&nbsp;&nbsp;<!-- 按钮间隔两个空格代码 -->
+<a data-id="1" class="switch-category chip" href="javascript:void(0)" onclick="showWechatQRCode()">
+<span class="chip-icon" style="background: url('./img/wx.svg') center/cover no-repeat;"></span>联系客服</a>
+&nbsp;&nbsp;<!-- 按钮间隔两个空格代码 -->
+<a data-id="1" class="switch-category chip" href="javascript:void(0)" onclick="showQqQRCode()">
+<span class="chip-icon" style="background: url('./img/qq.svg') center/cover no-repeat;"></span>联系客服</a>
+<!-- switch-category chip is-primary 是高亮按钮样式 -->
+<!-- switch-category chip 是普通按钮样式 -->
+<!-- 按钮前的图标可以用ico或者普通图片格式 -->
+</br>
+</div>
 </div>
 
-<!-- 修改为包含微信和QQ的联系容器 -->
-<div class="contact-container">
-<div class="contact-item">
-<span id="wechatId">微信客服：FenerSS</span>
-<button class="copy-btn wechat-copy-btn" onclick="copyWechat()">复制</button>
+<!-- 内容面板 -->
+<div class="panel">
+<div class="panel-header">
+<img src="./img/chengxu.png" class="brand-logo me-2">
+<h6 class="panel-title">业务列表</h6>
 </div>
-<div class="contact-item">
-<span id="qqId">QQ客服：1065613791</span>
-<button class="copy-btn qq-copy-btn" onclick="copyQQ()">复制</button>
+<div class="panel-body">
+<div class="mb-3">
+<div class="chip-list">
+</div>
+<div class="row item-list">
+
+<!-- 内容分割线 -->
+
+<a href="javascript:void(0)" class="col-12 col-md-6 col-lg-3 mb-3" data-id="2" onclick="Hyyw()">
+<div class="acg-card  h-100">
+<div class="acg-thumb" style="background: url('./img/hyyw.png') center/cover no-repeat;"></div>
+<div class="p-3">
+<p class="goods-title">会员业务</p>
+<div class="tags">
+<span class="badge-soft badge-soft-success">音乐会员</span>
+<span class="badge-soft badge-soft-success">视频会员</span>
+</div>
+<div class="stat-bottom">
+<span>各种影音增值类会员</span>
+<span class="switch-race sku is-primary">点击查看</span>
+</div>
 </div>
 </div>
 
-<div class="nav-container">
-<!--onclick参数【"window.open('./地址')"】是新窗口打开-->
-<!--onclick参数【"window.open('./地址', '_self')"】是当前窗口打开-->
-<button class="nav-btn" onclick="window.open('./ywjd', '_self')">业务接单</button>
-<button class="nav-btn" onclick="window.open('./yyzx', '_self')">应用中心</button>
-<button class="nav-btn" onclick="window.open('./qfdh', '_self')">清锋导航</button>
+<a href="javascript:void(0)" class="col-12 col-md-6 col-lg-3 mb-3" data-id="2" onclick="Dyyw()">
+<div class="acg-card  h-100">
+<div class="acg-thumb" style="background: url('./img/dyyw.png') center/cover no-repeat;"></div>
+<div class="p-3">
+<p class="goods-title">抖音业务</p>
+<div class="tags">
+<span class="badge-soft badge-soft-success">直播人气</span>
+<span class="badge-soft badge-soft-success">财富业务</span>
+</div>
+<div class="stat-bottom">
+<span>抖音平台全方面业务</span>
+<span class="switch-race sku is-primary">点击查看</span>
+</div>
+</div>
 </div>
 
-<div class="toast" id="toast">复制成功!</div>
-
-<div class="record-link">
-<span>清锋网络 &copy; 2026</span>
+<a href="javascript:void(0)" class="col-12 col-md-6 col-lg-3 mb-3" data-id="2" onclick="Rjkf()">
+<div class="acg-card  h-100">
+<div class="acg-thumb" style="background: url('./img/rjkf.png') center/cover no-repeat;"></div>
+<div class="p-3">
+<p class="goods-title">软件开发</p>
+<div class="tags">
+<span class="badge-soft badge-soft-success">源码交付</span>
+<span class="badge-soft badge-soft-success">终身维护</span>
+</div>
+<div class="stat-bottom">
+<span>各类PC端轻量级应用程序</span>
+<span class="switch-race sku is-primary">点击查看</span>
+</div>
+</div>
 </div>
 
-<!-- 微信客服按钮 -->
-<div class="wechat-support-btn" onclick="showWechatQRCode()">
-<i class="fab fa-weixin"></i>
+<a href="javascript:void(0)" class="col-12 col-md-6 col-lg-3 mb-3" data-id="2" onclick="Jbdz()">
+<div class="acg-card  h-100">
+<div class="acg-thumb" style="background: url('./img/jbdz.png') center/cover no-repeat;"></div>
+<div class="p-3">
+<p class="goods-title">脚本定制</p>
+<div class="tags">
+<span class="badge-soft badge-soft-success">解放双手</span>
+<span class="badge-soft badge-soft-success">24小时监控</span>
+</div>
+<div class="stat-bottom">
+<span>全自动化脚本 模拟人工操作</span>
+<span class="switch-race sku is-primary">点击查看</span>
+</div>
+</div>
 </div>
 
-<!-- 日夜切换按钮 -->
-<button class="theme-toggle" id="themeToggle">
-<svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-<path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1-8.313-12.454z" />
-</svg>
-<svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-<path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" />
-</svg>
-</button>
+<a href="javascript:void(0)" class="col-12 col-md-6 col-lg-3 mb-3" data-id="2" onclick="Wzdj()">
+<div class="acg-card  h-100">
+<div class="acg-thumb" style="background: url('./img/wzdj.png') center/cover no-repeat;"></div>
+<div class="p-3">
+<p class="goods-title">网站搭建</p>
+<div class="tags">
+<span class="badge-soft badge-soft-success">单页仿造</span>
+<span class="badge-soft badge-soft-success">整站搭建</span>
+</div>
+<div class="stat-bottom">
+<span>打造属于你自己的网站</span>
+<span class="switch-race sku is-primary">点击查看</span>
+</div>
+</div>
+</div>
+
+<a href="javascript:void(0)" class="col-12 col-md-6 col-lg-3 mb-3" data-id="2" onclick="Pmsj()">
+<div class="acg-card  h-100">
+<div class="acg-thumb" style="background: url('./img/pmsj.png') center/cover no-repeat;"></div>
+<div class="p-3">
+<p class="goods-title">平面设计</p>
+<div class="tags">
+<span class="badge-soft badge-soft-success">商品封面</span>
+<span class="badge-soft badge-soft-success">活动海报</span>
+</div>
+<div class="stat-bottom">
+<span>二维平面图修改与设计</span>
+<span class="switch-race sku is-primary">点击查看</span>
+</div>
+</div>
+</div>
+
+<a href="#" class="col-12 col-md-6 col-lg-3 mb-3" data-id="2">
+<div class="acg-card  h-100">
+<div class="acg-thumb" style="background: url('./img/qtyw.png') center/cover no-repeat;"></div>
+<div class="p-3">
+<p class="goods-title">其他业务</p>
+<div class="tags">
+<span class="badge-soft badge-soft-success">业务范围极广</span>
+<span class="badge-soft badge-soft-success">欢迎咨询</span>
+</div>
+<div class="stat-bottom">
+<span>各种互联网类型业务</span>
+<span class="switch-race sku is-primary2">返回顶部</span>
+</div>
+</div>
+</div>
+
+<!-- 内容分割线 -->
+
+</main>
+</div>
 
 <!-- 微信客服二维码弹窗 -->
 <div class="wechat-qrcode-modal" id="wechatQrcodeModal">
 <img class="wechat-qrcode" src="./img/wx2wm.jpg">
 </div>
 
-<script>
-// 复制微信
-const copyWechat = async () => {
-const text = 'FenerSS';
-try {
-await navigator.clipboard.writeText(text);
-showToast('客服微信号复制成功');
-} catch (err) {
-const input = document.createElement('input');
-input.value = text;
-document.body.appendChild(input);
-input.select();
-document.execCommand('copy');
-document.body.removeChild(input);
-showToast('客服微信号复制成功');
-}
-};
+<!-- QQ客服二维码弹窗 -->
+<div class="Qq-qrcode-modal" id="QqQrcodeModal">
+<img class="Qq-qrcode" src="./img/qq2wm.jpg">
+</div>
 
-// 新增复制QQ
-const copyQQ = async () => {
-const text = '1065613791';
-try {
-await navigator.clipboard.writeText(text);
-showToast('客服QQ号复制成功');
-} catch (err) {
-const input = document.createElement('input');
-input.value = text;
-document.body.appendChild(input);
-input.select();
-document.execCommand('copy');
-document.body.removeChild(input);
-showToast('客服QQ号复制成功');
-}
-};
+<!-- 会员业务弹窗 -->
+<div class="hyyw-tc" id="HyywTc">
+<img class="hyyw" src="./img/hyywtc.png">
+</div>
 
-// 优化提示框函数，支持自定义文字
-const showToast = (message = '复制成功') => {
-const toast = document.getElementById('toast');
-toast.textContent = message;
-toast.classList.add('show');
-setTimeout(() => toast.classList.remove('show'), 1500);
-};
+<!-- 抖音业务弹窗 -->
+<div class="dyyw-tc" id="DyywTc">
+<img class="dyyw" src="./img/dyywtc.jpg">
+</div>
 
-// 禁用双击缩放
-document.addEventListener('dblclick', (e) => {
-e.preventDefault();
-}, { passive: false });
+<!-- 软件开发弹窗 -->
+<div class="rjkf-tc" id="RjkfTc">
+<img class="rjkf" src="./img/rjkftc.jpg">
+</div>
 
-// 新增主题切换功能
-const themeToggle = document.getElementById('themeToggle');
-const html = document.documentElement;
+<!-- 脚本定制弹窗 -->
+<div class="jbdz-tc" id="JbdzTc">
+<img class="jbdz" src="./img/jbdztc.jpg">
+</div>
 
-// 初始化主题，默认显示白天模式
-const savedTheme = localStorage.getItem('theme') || 'light';
-html.classList.toggle('light-mode', savedTheme === 'light');
+<!-- 网站搭建弹窗 -->
+<div class="wzdj-tc" id="WzdjTc">
+<img class="wzdj" src="./img/wzdjtc.jpg">
+</div>
 
-themeToggle.addEventListener('click', () => {
-html.classList.toggle('light-mode');
-const isLight = html.classList.contains('light-mode');
-localStorage.setItem('theme', isLight? 'light' : 'dark');
-
-// 兼容系统主题同步
-if (isLight) {
-document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#f5f5f5');
-} else {
-document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#2b2b2b');
-}
-});
-
-// 自动匹配系统主题
-const systemTheme = window.matchMedia('(prefers-color-scheme: light)');
-systemTheme.addEventListener('change', e => {
-if (!localStorage.getItem('theme')) {
-html.classList.toggle('light-mode', e.matches);
-}
-});
-
-// 显示微信客服二维码弹窗
-const showWechatQRCode = () => {
-const modal = document.getElementById('wechatQrcodeModal');
-modal.classList.add('show');
-document.addEventListener('click', closeWechatQRCodeOnClickOutside);
-};
-
-// 点击弹窗外部关闭二维码弹窗
-const closeWechatQRCodeOnClickOutside = (e) => {
-const modal = document.getElementById('wechatQrcodeModal');
-if (e.target === modal) {
-modal.classList.remove('show');
-document.removeEventListener('click', closeWechatQRCodeOnClickOutside);
-}
-};
-</script>
+<!-- 平面设计弹窗 -->
+<div class="pmsj-tc" id="PmsjTc">
+<img class="pmsj" src="./img/pmsjtc.jpg">
+</div>
 
 </body>
 </html>
