@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>获取最新链接</title>
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="./css/url.css">
+</head>
+<!-- 头部内容结束 -->
+
+<body>
+<a href="./" class="back-home-btn">返回应用中心</a>
+<div class="container">
+<ul class="accordion">
+
+<!-- 内容分割线 -->
+<li class="accordion-item">
+<button class="accordion-header">如何获取最新可用地址</button>
+<div class="accordion-content">
+<span style="font-size: 14px; color: #ff0000;"><strong>Sexmcc论坛最新地址</strong></span>
+<p>海外永久可用地址：<a href="https://sexmcc.com/" target="_blank">sexmcc.com</a></p>
+<p>TG社区：<a href="https://t.me/sexmccccom/" target="_blank">t.me/sexmccccom</a></p></p>
+<p>最新地址发布页1：<a href="https://sexmcc13.com/" target="_blank">sexmcc13.com</a></p>
+<p>最新地址发布页2：<a href="https://sexmcc14.com/" target="_blank">sexmcc14.com</a></p>
+<p>最新地址发布页3：<a href="https://sexmcc15.com/" target="_blank">sexmcc15.com</a></p>
+
+<span style="font-size: 14px; color: #ff0000;"><strong>草榴社区最新地址</strong></span>
+<p>海外永久可用地址：<a href="http://caoliu1024.com/" target="_blank">caoliu1024.com</a></p>
+<p>海外地址2：<a href="http://1024caoliu.com/" target="_blank">1024caoliu.com</a></p>
+<p>海外地址3：<a href="http://caoliu.sex/" target="_blank">caoliu.sex</a></p></p>
+<p>或者发任意内容邮件到：caoliu950@gmail.com</p>
+</div>
+</li>
+
+<li class="accordion-item">
+<button class="accordion-header">还是找不到 想找其他地址 联系客服</button>
+<div class="accordion-content">
+<span style="font-size: 14px; color: #ff0000;"><strong>扫一扫添加客服微信</strong></span>
+<p>
+<img src="./img/wx2wm.jpg" style="border-radius: 10px;">
+</div>
+</li>
+<!-- 内容分割线 -->
+
+</ul>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+accordionHeaders.forEach(header => {
+header.addEventListener("click", function() {
+const content = header.nextElementSibling;
+const isVisible = content.style.display === "block";
+                    
+// 关闭所有内容
+document.querySelectorAll(".accordion-content").forEach(c => c.style.display = "none");
+
+// 如果当前点击的内容未展开，则展开
+if (!isVisible) {
+content.style.display = "block";
+}
+});
+});
+});
+</script>
+</body>
+</html>
