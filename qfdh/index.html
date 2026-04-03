@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>清锋导航</title>
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<!-- 头部内容结束 -->
+
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#01a982',
+primaryDark: '#018a68',
+secondary: '#60ae80',
+uniq: '#696cff',
+link: '#55acee',
+linkHover: '#3b8fc9',
+lightGray: '#fafafa',
+borderGray: '#f0f0f0',
+textGray: '#999',
+cardRed: '#d32f2f',
+cardBlue: '#1976d2',
+cardPurple: '#696cff'
+},
+fontFamily: {
+sans: ['Source Sans Pro', 'sans-serif']
+},
+boxShadow: {
+'card': '0 10px 30px rgba(0, 0, 0, 0.1)',
+'hover': '0 15px 35px rgba(0, 0, 0, 0.12)',
+'inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)'
+}
+}
+}
+}
+</script>
+
+<body class="font-sans text-white font-light min-h-screen overflow-x-hidden">
+<div id="all" class="w-full overflow-x-hidden">
+<div class="bg-gradient-primary relative w-full min-h-screen flex flex-col items-center justify-center py-5 px-4 box-border">
+<ul class="bg-bubbles absolute top-0 left-0 w-full h-full h-full z-10 pointer-events-none overflow-hidden">
+<li class="animate-bubble absolute list-none w-10 h-10 bg-white/15 bottom-[-40px] rounded-full left-[10%]"></li>
+<li class="animate-bubble animate-bubble-delay-2 absolute list-none w-20 h-20 bg-white/15 bottom-[-40px] rounded-full left-[20%]"></li>
+<li class="animate-bubble animate-bubble-delay-4 absolute list-none w-10 h-10 bg-white/15 bottom-[-40px] rounded-full left-[25%]"></li>
+<li class="animate-bubble absolute list-none w-14 h-14 bg-white/25 bottom-[-40px] rounded-full left-[40%]"></li>
+<li class="animate-bubble absolute list-none w-10 h-10 bg-white/15 bottom-[-40px] rounded-full left-[70%]"></li>
+<li class="animate-bubble animate-bubble-delay-3 absolute list-none w-30 h-30 bg-white/20 bottom-[-40px] rounded-full left-[80%]"></li>
+<li class="animate-bubble animate-bubble-delay-7 absolute list-none w-40 h-40 bg-white/15 bottom-[-40px] rounded-full left-[32%]"></li>
+<li class="animate-bubble animate-bubble-delay-15 absolute list-none w-5 h-5 bg-white/15 bottom-[-40px] rounded-full left-[55%]"></li>
+<li class="animate-bubble animate-bubble-delay-2 absolute list-none w-2.5 h-2.5 bg-white/30 bottom-[-40px] rounded-full left-[25%]"></li>
+<li class="animate-bubble animate-bubble-delay-11 absolute list-none w-40 h-40 bg-white/15 bottom-[-40px] rounded-full left-[90%]"></li>
+</ul>
+<div class="main relative z-50 w-full max-w-4xl text-center py-8 box-border">
+<div class="mb-8">
+<h1 class="text-[clamp(1.8rem,5vw,2.8rem)] font-normal text-white mb-2 uppercase text-shadow tracking-wide">清锋导航</h1>
+</div>
+
+<div class="content mx-auto bg-white rounded-2xl shadow-card transition-all duration-300 hover:shadow-hover w-full max-w-full overflow-hidden card-hover">
+<div class="content-top">
+<div class="card-title py-4 px-4 rounded-t-2xl text-wrap">
+<h2 class="text-[clamp(1rem,3vw,1.3rem)] text-white text-center font-medium leading-relaxed">
+清锋导航 · 自适应静态单页面
+</h2>
+</div>
+
+<ul class="template-list overflow-x-hidden">
+
+<!-- 内容分割线 -->
+<li class="text-gray-900 text-[clamp(0.9rem,2vw,1rem)] leading-relaxed template-item text-wrap">
+<div class="text-left">
+<span class="template-name" style="color:#ff4757"><i class="fa-solid fa-star"></i>清锋网络</span>
+<span class="template-desc">返回清锋网络主站</span>
+&nbsp;
+<a href="../" class="custom-link demo-link">
+<i class="fa-solid fa-external-link-alt"></i>返回
+</a>
+</div>
+</li>
+
+<li class="text-gray-900 text-[clamp(0.9rem,2vw,1rem)] leading-relaxed template-item text-wrap">
+<div class="text-left">
+<span class="template-name" style="color:#ffa502"><i class="fa-solid fa-cube"></i>业务接单</span>
+<span class="template-desc">清锋网络 · 业务接单页</span>
+&nbsp;
+<a href="../ywjd" class="custom-link demo-link">
+<i class="fa-solid fa-external-link-alt"></i>点击访问
+</a>
+</div>
+</li>
+
+<li class="text-gray-900 text-[clamp(0.9rem,2vw,1rem)] leading-relaxed template-item text-wrap">
+<div class="text-left">
+<span class="template-name" style="color:#3742fa"><i class="fa-solid fa-cube"></i>应用中心</span>
+<span class="template-desc">清锋网络 · 应用中心页</span>
+&nbsp;
+<a href="../yyzx" class="custom-link demo-link">
+<i class="fa-solid fa-external-link-alt"></i>点击访问
+</a>
+</div>
+</li>
+
+<li class="text-gray-900 text-[clamp(0.9rem,2vw,1rem)] leading-relaxed template-item text-wrap">
+<div class="text-left">
+<span class="template-name" style="color:#00d2d3"><i class="fa-solid fa-cube"></i>等待添加</span>
+<span class="template-desc">很懒 还没有添加</span>
+&nbsp;
+<a href="javascript:void(0)" class="custom-link demo-link">
+<i class="fa-solid fa-external-link-alt"></i>点击访问
+</a>
+</div>
+</li>
+
+<li class="text-gray-900 text-[clamp(0.9rem,2vw,1rem)] leading-relaxed template-item text-wrap">
+<div class="text-left">
+<span class="template-name" style="color:#a55eea"><i class="fa-solid fa-cube"></i>等待添加</span>
+<span class="template-desc">很懒 还没有添加</span>
+&nbsp;
+<a href="javascript:void(0)" class="custom-link demo-link">
+<i class="fa-solid fa-external-link-alt"></i>点击访问
+</a>
+</div>
+</li>
+
+<li class="text-gray-900 text-[clamp(0.9rem,2vw,1rem)] leading-relaxed template-item text-wrap">
+<div class="text-left">
+<span class="template-name" style="color:#f368e0"><i class="fa-solid fa-rocket"></i>回到顶部</span>
+<span class="template-desc">已经到底啦~</span>
+&nbsp;
+<a href="#" class="custom-link demo-link">
+<i class="fa-solid fa-external-link-alt"></i>回到顶部
+</a>
+</div>
+</li>
+<!-- 内容分割线 -->
+
+</ul>
+</div>
+</div>
+
+
+<div class="mt-8 px-4 w-full box-border">
+<div class="bg-white/10 backdrop-blur-sm rounded-2xl p-5 shadow-inner w-full">
+<h3 class="text-xl font-medium mb-3">版权所有</h3>
+<p class="text-white/90 service-desc text-wrap">清锋网络 &copy; 2026</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
