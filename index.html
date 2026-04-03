@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>清锋网络</title>
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="./css/index.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<!-- 头部内容结束 -->
+
+<body>
+<div class="avatar-wrapper">
+<img src="./img/head.jpg" class="avatar">
+</div>
+
+<!-- 修改为包含微信和QQ的联系容器 -->
+<div class="contact-container">
+<div class="contact-item">
+<span id="wechatId">微信客服：FenerSS</span>
+<button class="copy-btn wechat-copy-btn" onclick="copyWechat()">复制</button>
+</div>
+<div class="contact-item">
+<span id="qqId">QQ客服：1065613791</span>
+<button class="copy-btn qq-copy-btn" onclick="copyQQ()">复制</button>
+</div>
+</div>
+
+<div class="nav-container">
+<!--onclick参数【"window.open('./地址')"】是新窗口打开-->
+<!--onclick参数【"window.open('./地址', '_self')"】是当前窗口打开-->
+
+<!-- 内容分割线 -->
+<button class="nav-btn" onclick="window.open('./ywjd', '_self')">业务接单</button>
+<button class="nav-btn" onclick="window.open('./yyzx', '_self')">应用中心</button>
+<button class="nav-btn" onclick="window.open('./qfdh', '_self')">清锋导航</button>
+<!-- 内容分割线 -->
+
+</div>
+
+<div class="toast" id="toast">复制成功</div>
+
+<div class="record-link">
+<span>清锋网络 &copy; 2026</span>
+</div>
+
+<!-- 微信客服按钮 -->
+<div class="wechat-support-btn" onclick="showWechatQRCode()">
+<i class="fab fa-weixin"></i>
+</div>
+
+<!-- 日夜切换按钮 -->
+<button class="theme-toggle" id="themeToggle">
+<svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1-8.313-12.454z" />
+</svg>
+<svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" />
+</svg>
+</button>
+
+<!-- 微信客服二维码弹窗 -->
+<div class="wechat-qrcode-modal" id="wechatQrcodeModal">
+<img class="wechat-qrcode" src="./img/wx2wm.jpg">
+</div>
+
+<script>
+// 复制微信
+const copyWechat = async () => {
+const text = 'FenerSS';
+try {
+await navigator.clipboard.writeText(text);
+showToast('客服微信号复制成功');
+} catch (err) {
+const input = document.createElement('input');
+input.value = text;
+document.body.appendChild(input);
+input.select();
+document.execCommand('copy');
+document.body.removeChild(input);
+showToast('客服微信号复制成功');
+}
+};
+
+// 新增复制QQ
+const copyQQ = async () => {
+const text = '1065613791';
+try {
+await navigator.clipboard.writeText(text);
+showToast('客服QQ号复制成功');
+} catch (err) {
+const input = document.createElement('input');
+input.value = text;
+document.body.appendChild(input);
+input.select();
+document.execCommand('copy');
+document.body.removeChild(input);
+showToast('客服QQ号复制成功');
+}
+};
+
+// 优化提示框函数，支持自定义文字
+const showToast = (message = '复制成功') => {
+const toast = document.getElementById('toast');
+toast.textContent = message;
+toast.classList.add('show');
+setTimeout(() => toast.classList.remove('show'), 1500);
+};
+
+// 禁用双击缩放
+document.addEventListener('dblclick', (e) => {
+e.preventDefault();
+}, { passive: false });
+
+// 新增主题切换功能
+const themeToggle = document.getElementById('themeToggle');
+const html = document.documentElement;
+
+// 初始化主题，默认显示白天模式
+const savedTheme = localStorage.getItem('theme') || 'light';
+html.classList.toggle('light-mode', savedTheme === 'light');
+
+themeToggle.addEventListener('click', () => {
+html.classList.toggle('light-mode');
+const isLight = html.classList.contains('light-mode');
+localStorage.setItem('theme', isLight? 'light' : 'dark');
+
+// 兼容系统主题同步
+if (isLight) {
+document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#f5f5f5');
+} else {
+document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#2b2b2b');
+}
+});
+
+// 自动匹配系统主题
+const systemTheme = window.matchMedia('(prefers-color-scheme: light)');
+systemTheme.addEventListener('change', e => {
+if (!localStorage.getItem('theme')) {
+html.classList.toggle('light-mode', e.matches);
+}
+});
+
+// 显示微信客服二维码弹窗
+const showWechatQRCode = () => {
+const modal = document.getElementById('wechatQrcodeModal');
+modal.classList.add('show');
+document.addEventListener('click', closeWechatQRCodeOnClickOutside);
+};
+
+// 点击弹窗外部关闭二维码弹窗
+const closeWechatQRCodeOnClickOutside = (e) => {
+const modal = document.getElementById('wechatQrcodeModal');
+if (e.target === modal) {
+modal.classList.remove('show');
+document.removeEventListener('click', closeWechatQRCodeOnClickOutside);
+}
+};
+</script>
+</body>
+</html>
