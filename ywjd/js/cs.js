@@ -1,1 +1,0 @@
-setVar("DEBUG",false);setVar("CAT_ID",0);setVar("HACK_ROUTE_TABLE_COLUMNS","");setVar("HACK_SUBMIT_FORM","");setVar("HACK_SUBMIT_TAB","");setVar("HACK_ROUTE_TABLE_SEARCH","");
