@@ -1,0 +1,103 @@
+/* 基本样式设置 */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #fff;
+color: #333;
+}
+
+.back-home-btn {
+background-color: #3498db; /* 蓝色 */
+color: white;
+padding: 12px 20px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+border-radius: 2px;
+margin: 20px;
+display: block;
+text-align: center;
+text-decoration: none;
+transition: background-color 0.3s;
+}
+.back-home-btn:hover {
+background-color: #2980b9; /* 深蓝色 */
+}
+
+/* 容器宽度设置 */
+.container {
+width: 100%;
+max-width: 100%;  /* 100% 宽度 */
+box-sizing: border-box;
+margin: 0 auto;
+padding: 20px;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+border-radius: 2px; /* 圆角 */
+overflow: hidden; /* 确保不出现滚动条 */
+}
+
+/* 手风琴样式 */
+.accordion {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+.accordion-item {
+border-top: 2px solid #3498db; /* 蓝色描边框 */
+border-radius: 5px; /* 椭圆形边框 */
+margin-bottom: 5px; /* 降低每个项目的间隙 */
+}
+
+.accordion-item:first-child {
+border-top: none;
+}
+
+.accordion-header {
+background-color: #fff; /* 白色背景 */
+color: #3498db; /* 蓝色字体 */
+padding: 12px 16px; /* 减少内边距 */
+cursor: pointer;
+font-size: 18px;
+text-align: left;
+width: 100%;
+outline: none;
+border: 2px solid #3498db; /* 蓝色边框 */
+border-radius: 5px; /* 椭圆形边框 */
+transition: background-color 0.3s ease;
+}
+.accordion-header:hover {
+background-color: #ecf0f1; /* 浅灰色背景 */
+}
+
+.accordion-content {
+background-color: #f9f9f9; /* 浅灰色背景 */
+padding: 12px 16px; /* 减少内容内边距 */
+display: none;
+font-size: 14px;
+border-top: 1px solid #ddd;
+border-radius: 5px; /* 椭圆形边框 */
+margin-top: 5px; /* 减小内容区域与标题之间的间隙 */
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+.accordion-header {
+font-size: 16px;  /* 小屏幕调整字体大小 */
+}
+
+.accordion-content {
+font-size: 13px;  /* 小屏幕调整内容字体大小 */
+}
+
+.container {
+padding: 10px;  /* 小屏幕减少内边距 */
+}
+
+.back-home-btn {
+font-size: 14px; /* 小屏幕时按钮字体变小 */
+padding: 10px 15px;
+}
+}
