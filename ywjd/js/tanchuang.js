@@ -148,17 +148,17 @@ document.removeEventListener('click', closeWzdj);
 };
 
 // 显示平面设计弹窗
-const Pmsj = () => {
-const modal = document.getElementById('PmsjTc');
+const Txsj = () => {
+const modal = document.getElementById('TxsjTc');
 modal.classList.add('show');
-document.addEventListener('click', closePmsj);
+document.addEventListener('click', closeTxsj);
 };
 
 // 关闭平面设计弹窗
-const closePmsj = (e) => {
-const modal = document.getElementById('PmsjTc');
+const closeTxsj = (e) => {
+const modal = document.getElementById('TxsjTc');
 if (e.target === modal) {
 modal.classList.remove('show');
-document.removeEventListener('click', closePmsj);
+document.removeEventListener('click', closeTxsj);
 }
 };
