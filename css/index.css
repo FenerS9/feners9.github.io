@@ -1,0 +1,268 @@
+:root {
+--bg-color: #2b2b2b;
+--text-color: #ffffff;
+--primary-color: #00c3ff;
+--card-bg: rgba(255, 255, 255, 0.1);
+--avatar-border-color: #aaa;
+/* 灰白色边框颜色 */
+--wechat-green: #21d247;
+/* 微信绿 */
+--qq-blue: #0099ff; /* 新增QQ蓝色 */
+--dark-border-color: rgba(255, 255, 255, 0.3);
+--light-border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* 新增亮色主题变量 */
+:root.light-mode {
+--bg-color: #f5f5f5;
+--text-color: #333333;
+--primary-color: #007bff;
+--card-bg: rgba(0, 0, 0, 0.05);
+}
+
+.light-mode .nav-btn {
+border-color: var(--light-border-color);
+box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-btn {
+border: 1px solid var(--dark-border-color);
+box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+transition: all 0.3s;
+}
+
+.nav-btn:hover {
+border-color: var(--primary-color);
+box-shadow: 0 0 12px var(--primary-color);
+}
+
+/* 头像容器定位 */
+.avatar-wrapper {
+position: relative;
+margin-bottom: 1.5rem;
+width: min(100%, 32rem);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+touch-action: manipulation;
+}
+
+body {
+background: var(--bg-color);
+color: var(--text-color);
+font-family: system-ui, -apple-system, sans-serif;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 2rem 1rem;
+position: relative;
+}
+
+.avatar {
+width: 8rem;
+height: 8rem;
+border-radius: 50%;
+border: 3px solid var(--avatar-border-color);
+/* 修改头像边框颜色 */
+margin-bottom: 1.5rem;
+object-fit: cover;
+}
+
+.contact-container {
+display: flex;
+flex-direction: column;
+gap: 0.8rem;
+align-items: center;
+margin-bottom: 2rem;
+}
+
+.contact-item {
+display: flex;
+gap: 0.8rem;
+align-items: center;
+}
+
+.copy-btn {
+color: white;
+padding: 0.4rem 1rem;
+border-radius: 1rem;
+cursor: pointer;
+transition: opacity 0.3s;
+border: none;
+}
+
+.wechat-copy-btn {
+background: var(--wechat-green); /* 复制按钮底色换成微信绿 */
+}
+
+.qq-copy-btn {
+background: var(--qq-blue); /* QQ复制按钮用QQ蓝 */
+}
+
+
+.copy-btn:hover {
+opacity: 0.9;
+}
+
+.nav-container {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+width: min(60%, 24rem);
+/* 导航按钮宽度为五分之三 */
+}
+
+.nav-btn {
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(4px);
+color: var(--text-color);
+/* 减小内边距 */
+padding: 0.7rem;
+border-radius: 2rem;
+/* 导航按钮两边变圆 */
+cursor: pointer;
+width: 100%;
+/* 减小字体大小 */
+font-size: 0.9rem;
+}
+
+.nav-btn:active {
+transform: scale(0.98);
+}
+
+.toast {
+position: fixed;
+bottom: 2rem;
+left: 50%;
+transform: translateX(-50%);
+background: rgba(0, 0, 0, 0.8);
+color: white;
+padding: 0.8rem 1.5rem;
+border-radius: 2rem;
+opacity: 0;
+transition: opacity 0.3s;
+pointer-events: none;
+}
+
+.toast.show {
+opacity: 1;
+}
+
+.record-link {
+margin-top: 2rem;
+font-size: 0.9rem;
+}
+
+.record-link a {
+color: var(--text-color);
+}
+
+@media (max-width: 480px) {
+body {
+padding: 1.5rem 1rem;
+}
+
+.avatar {
+width: 6rem;
+height: 6rem;
+}
+}
+
+/* 月亮图标 */
+.moon-icon {
+width: 18px;
+height: 18px;
+fill: var(--text-color);
+}
+
+/* 太阳图标 */
+.light-mode .moon-icon {
+display: none;
+}
+
+.sun-icon {
+display: none;
+width: 18px;
+height: 18px;
+fill: var(--text-color);
+}
+
+.light-mode .sun-icon {
+display: block;
+}
+
+/* 微信客服按钮样式 */
+.wechat-support-btn {
+position: fixed;
+right: 20px;
+bottom: 35%;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background-color: var(--wechat-green);
+color: white;
+font-size: 18px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: transform 0.3s;
+}
+
+.wechat-support-btn:hover {
+transform: scale(1.1);
+}
+
+/* 日夜切换按钮样式 */
+.theme-toggle {
+position: fixed;
+right: 20px;
+bottom: calc(38% - 90px); /* 调整日夜切换按钮的位置，再往下移动一点 */
+width: 40px;
+height: 40px;
+border-radius: 50%;
+background: var(--card-bg);
+backdrop-filter: blur(4px);
+border: none;
+cursor: pointer;
+transition: transform 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.theme-toggle:hover {
+transform: scale(1.1);
+}
+
+/* 微信客服二维码弹窗样式 */
+.wechat-qrcode-modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+ }
+
+.wechat-qrcode-modal.show {
+display: flex;
+}
+
+.wechat-qrcode {
+width: 200px;
+height: 200px;
+background-color: white;
+border-radius: 8px;
+padding: 10px;
+}
