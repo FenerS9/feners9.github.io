@@ -1,0 +1,209 @@
+/* 微信客服二维码弹窗样式 */
+.wechat-qrcode-modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+ }
+
+.wechat-qrcode-modal.show {
+display: flex;
+}
+
+.wechat-qrcode {
+width: 200px;
+height: 200px;
+background-color: white;
+border-radius: 8px;
+padding: 10px;
+}
+
+/* QQ客服二维码弹窗样式 */
+.Qq-qrcode-modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+ }
+
+.Qq-qrcode-modal.show {
+display: flex;
+}
+
+.Qq-qrcode {
+width: 200px;
+height: 200px;
+background-color: white;
+border-radius: 8px;
+padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 会员业务弹窗 */
+.hyyw-tc {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+ }
+
+.hyyw-tc.show {
+display: flex;
+}
+
+.hyyw {
+width: 300px;
+height: 350px;
+background-color: white;
+border-radius: 8px;
+padding: 10px;
+}
+
+/* 抖音业务弹窗 */
+.dyyw-tc {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+ }
+
+.dyyw-tc.show {
+display: flex;
+}
+
+.dyyw {
+width: 300px;
+height: 350px;
+background-color: white;
+border-radius: 8px;
+padding: 10px;
+}
+
+/* 软件开发弹窗 */
+.rjkf-tc {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+ }
+
+.rjkf-tc.show {
+display: flex;
+}
+
+.rjkf {
+width: 300px;
+height: 350px;
+background-color: white;
+border-radius: 8px;
+padding: 10px;
+}
+
+/* 脚本定制弹窗 */
+.jbdz-tc {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+ }
+
+.jbdz-tc.show {
+display: flex;
+}
+
+.jbdz {
+width: 300px;
+height: 350px;
+background-color: white;
+border-radius: 8px;
+padding: 10px;
+}
+
+/* 网站搭建弹窗 */
+.wzdj-tc {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+ }
+
+.wzdj-tc.show {
+display: flex;
+}
+
+.wzdj {
+width: 300px;
+height: 350px;
+background-color: white;
+border-radius: 8px;
+padding: 10px;
+}
+
+/* 图像设计弹窗 */
+.txsj-tc {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+ }
+
+.txsj-tc.show {
+display: flex;
+}
+
+.txsj {
+width: 300px;
+height: 350px;
+background-color: white;
+border-radius: 8px;
+padding: 10px;
+}
