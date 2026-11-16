@@ -23,7 +23,7 @@ animation-duration: 40s;
 animation-delay: 11s;
 }
 .bg-gradient-primary {
-background: linear-gradient(to bottom right, #222222 0%, #222222 100%);
+background: #222222; /* 网页背景颜色 */
 }
 .text-shadow {
 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -61,7 +61,7 @@ gap: 6px;
 .template-desc {
 font-weight: 350;
 font-size: 0.80rem;
-color: #666;
+color: #666; /* 链接简介文字颜色 */
 line-height: 1.4;
 margin-top: 0.2rem;
 }
@@ -96,17 +96,16 @@ border-bottom: none;
 }
 
 .card-title {
-background: #01a982;
-
+background: #01a982; /* 导航顶部栏背景颜色 */
 }
 
 .custom-link {
 transition: all 0.25s ease;
-color: #01a982;
+color: #01a982; /* 跳转图标及文字颜色 */
 }
 .custom-link:hover {
 transform: translateX(4px);
-color: #018a68 !important;
+color: #018a68 !important; /* 被选中后跳转图标及文字颜色 */
 }
 .custom-link i {
 transition: margin-right 0.25s ease;
@@ -122,8 +121,8 @@ box-sizing: border-box !important;
 border-bottom: 1px solid #f0f0f0;
 }
 .template-list li:hover {
-background-color: #f8f9fa;
-border-left: 3px solid #01a982;
+background-color: #f8f9fa; /* 被选中行背景颜色 */
+border-left: 3px solid #01a982; /* 被选中行左边滑块的长度及颜色 */
 }
 
 .service-desc {
